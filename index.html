@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html lang="eS">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro de salud</title>
+    <link rel="shortcut icon" href="assets/el-planeta-tierra.png">
     <script type=" text/javascript" src="js/script.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
     <link rel="stylesheet" href="css/style.css">
-
-
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+        <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
 <body>
     <!--Fecha-->
     <div class="container-fluid">
-        <div class="row" style="background: #2980B9;">
+        <div class="row" style="background: #81be4d;">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="rounded float-end" style="color:white">
                     <i>
@@ -32,89 +36,236 @@
 
     <br>
     <!--BARRA NAVEGACION-->
-    <div class="container-fluid">
-        <div class="row">
-            <div class=" col-lg-12 col-md-12 col-sm-12">
-                <ul class="nav justify-content-center">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <div class="container-fluid">
+            <img src="assets/el-planeta-tierra.png" alt="" width="50" height="50">
+            <a class="navbar-brand" href="#">Center Salud</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Item1</a>
+                        <a class="nav-link" href="#">Enlace</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Acción</a></li>
+                            <li><a class="dropdown-item" href="#">Otra acción</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Algo más aquí</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Item2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled">Item3</a>
+                        <a class="nav-link disabled">Deshabilitado</a>
                     </li>
                 </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="" aria-label="Buscar">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
             </div>
         </div>
-    </div>
-    </div>
+    </nav>
 
     <br>
     <br>
-    
+
     <!--CUERPO-->
 
-    <div class="container" style="background: #2980B9;">
+    <div class="container" style="background: #eeeeee;">
         <br>
         <div class="row">
             <div class="col-lg-6 col-sm-6 col-md-6">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque dolores ullam iste delectus commodi sunt voluptatem. Fuga placeat vero dolorum autem ea eligendi, beatae a perferendis quos natus, adipisci dolore.
+                <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="assets/Imagen1.jpg" class="d-block w-100" alt="...">
+        
+                      </div>
+                      <div class="carousel-item" data-bs-interval="2000">
+                        <img src="assets/Imagen2.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="assets/Imagen3.jpg" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Siguiente</span>
+                    </button>
+                  </div>
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-6">
-                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus veniam doloribus atque! Deleniti assumenda a quae, porro voluptatibus dolores aliquid similique quos. Dicta velit nisi voluptatibus distinctio ad voluptatum suscipit?
+                <figure class="text-center">
+                    <blockquote class="blockquote">
+                      <h1 class="display-6">Somos Center Salud</h1>
+                    </blockquote>
+                    
+                    <p class="fs-6" style="text-align: justify;">
+                        Una plataforma dedicada a brindar soluciones de medicina natural para mejorar la calidad de vida de las personas.  En Center Salud creemos en la sabiduría de la naturaleza y en el poder de las hierbas y plantas para mejorar la salud de las personas. 
+                        <br>
+                        <br>
+                        Nuestro equipo está formado por profesionales apasionados por la medicina natural, comprometidos en ofrecer productos y servicios de alta calidad para satisfacer las necesidades de nuestros clientes. Nos esforzamos por ser líderes en el mercado de la medicina natural y en ofrecer soluciones efectivas y naturales para diversos problemas de salud.
+                        <br>
+                        <br>
+                         Todos nuestros productos están hechos con ingredientes 100% naturales de la más alta calidad y cumplen con los más altos estándares de calidad.
+                        <br>
+        
+                    <p>
+                  </figure>
             </div>
         </div>
     </div>
 
 </body>
+<br>
+<br>
+<!-- Footer -->
+<footer class=" text-center text-white" ">
+    <!-- Grid container -->
+    <div class=" container p-4" style="background-color: #3a7658">
 
+    <!-- Section: Form -->
+    <section class="" style="background-color: #3a7658">
+        <form action="">
+            <!--Grid row-->
+            <div class="row d-flex justify-content-center">
+                <!--Grid column-->
+                <div class="col-auto">
+                    <p class="pt-2">
+                        <strong>Subscribete para mas Informacion</strong>
+                    </p>
+                </div>
+                <!--Grid column-->
 
-<!--FOOTER-->
-<footer>
-    <div class="container" style="background: #2980B9;">
-        <br>
-        <div class="row">
-            <div class="col-lg-6 col-sm-6 col-md-6">
-                <ul style="color: aliceblue;">
-                    <ul>
-                        <li> Atención presencial: lunes a viernes 8:00 a.m. a 5:30 p.m.</li>
-                        <li> Atención telefónica: lunes a viernes 8:00 a.m. a 7:00 p.m.</li>
-                        <li>Vestibulum at eros</li>
-                    </ul>
+                <!--Grid column-->
+                <div class="col-md-5 col-12">
+                    <!-- Email input -->
+                    <div class="form-outline form-white mb-4">
+                        <input type="email" id="form5Example21" class="form-control" />
+                        <label class="form-label" for="form5Example21">Email address</label>
+                    </div>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-auto">
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-outline-light mb-4">
+                        Subscribe
+                    </button>
+                </div>
+                <!--Grid column-->
             </div>
+            <!--Grid row-->
+        </form>
+    </section>
+    <!-- Section: Form -->
 
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <ul style="color: aliceblue;">
-                    <ul>
-                        <li>
-                            <img src="img/map.png" width="23px" height="23px" alt="">Calle 41 No. 34-23 Barranquilla,
-                            Colombia
-                        </li>
-                        <li>
-                            <img src="img/whatsapp.png" width="23px" height="23px" alt="">(+57) 3243116423
-                        </li>
-                        <li>
-                            <img src="img/gmail.png" width="23px" height="23px" alt="">Centersalud@medicina.com
-                        </li>
-                    </ul>
+    <!-- Section: Text -->
+    <section class="mb-4">
+        <p>
+            La Medicina Natural es aquella que basa su filosofía en el poder curativo de la naturaleza para estimular la
+            capacidad de autocuración innata del cuerpo y favorecer un adecuado funcionamiento de sus mecanismos de
+            equilibrio a través de estilos de vida saludable y terapias provenientes de la naturaleza.
+        </p>
+    </section>
+    <!-- Section: Text -->
+
+    <!-- Section: Links -->
+    <section>
+        <!--Grid row-->
+        <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-4 mb-4 mb-md-4">
+                <h5 class="text-uppercase">Información de Contacto</h5>
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <img src="assets/facebook.png" width="23px" height="23px" alt="">Medicine Natural
+                    </li>
+                    <li>
+                        <img src="assets/whatsapp.png" width="23px" height="23px" alt="">(+57) 300129384
+                    </li>
+                    <li>
+                        <img src="assets/gmail.png" width="23px" height="23px" alt=""> naturalmedicine@centernatural.com
+                    </li>
+                </ul>
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-4 mb-4 mb-md-4">
+                <h5 class="text-uppercase">Ubicaciones</h5>
+
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <img src="assets/map.png" width="23px" height="23px" alt="">Carrera 43 Nro. 99-123
+                    </li>
+                    <li>
+                        <img src="assets/mapas-de-google.png" width="23px" height="23px" alt="">Barranquilla, Colombia
+                    </li>
                 </ul>
             </div>
-            <div class="row">
-                <div class="col-lg-12 col-sm-12 col-md-12">
-                    <h6 align="center">@ Todos los derechos reservados. Samir Rojas - Andres Acosta - Carlos Quintero
-                    </h6>
+            <!--Grid column-->
 
-                </div>
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-4 mb-4 mb-md-4">
+                <h5 class="text-uppercase">Normatividad</h5>
 
+                <ul class="list-unstyled mb-0">
+                    <li>
+                    <li href="#!" class="text-white">Resolución 0126 de 2009</li>
+                    </li>
+                    <li>
+                    <li href="#!" class="text-white">Decreto 1156 de 2018 </li>
+                    </li>
+                    <li>
+                        <link href="#!" class="text-white">Normativa 004 - 2008
+                    </li>
+                    </li>
+                </ul>
             </div>
+            <!--Grid column-->
         </div>
+        <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
     </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-1" style="background-color: #81be4d;">
+        © 2023 Copyright:
+        <a> Todos los derechos reservados. Desarrollado por Samir Rojas - Carlos Quintero - Andres Acosta</a>
+    </div>
+    <!-- Copyright -->
 </footer>
+<!-- Footer -->
 
 </html>
