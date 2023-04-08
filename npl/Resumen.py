@@ -1,15 +1,14 @@
 import re
-import bs4 as bs
 import urllib.request
 import nltk
-nltk.download('punkt')
-nltk.download('stopwords')
-import bs4
-import urllib.request
-from bs4 import BeautifulSoup
 import urllib.request
 from inscriptis import get_text
-from googletrans import Translator
+from nltk import word_tokenize,sent_tokenize
+import heapq
+from textblob import TextBlob
+
+nltk.download('punkt')
+nltk.download('stopwords')
 
 ##Scrapear
 enlace = input(f'Ingrese el link de la pagina\n ')
@@ -20,7 +19,6 @@ article_text =  text
 article_text = article_text.replace("[edit]","")
 
 
-from nltk import word_tokenize,sent_tokenize
 ##Elimina caracteres especiales y espacios
 article_text = re.sub(r'\[[0-9]*\]',' ', article_text)
 article_text = re.sub(r'\s+',' ',article_text)
@@ -61,10 +59,9 @@ for sent in sentence_list:
 ##resumen
 
 opc= input('¿Desea traducir el resumen? y/n \n')
-import heapq  
+
 summary_sentences = heapq.nlargest(7, sentence_scores, key=sentence_scores.get)
-summary = ' '.join(summary_sentences)  
-from textblob import TextBlob
+summary = ' '.join(summary_sentences)
 if (opc =='n'):
     print(summary)
 else:

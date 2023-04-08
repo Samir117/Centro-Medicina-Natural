@@ -1,4 +1,4 @@
-from nltk.chat.util import Chat, reflections
+from nltk.chat.util import Chat
 
 mis_reflexions = {
 "ir": "fui",
@@ -38,12 +38,17 @@ pares = [
     [
         r"finalizar",
         ["Chao","Fue bueno hablar contigo"]
-],
+    ],
 ]
 def chatear():
     print("Hola samir acaba ropa") #mensaje por defecto
     chat = Chat(pares, mis_reflexions)
-    chat.converse()
+    user_input = "hola"
+    print('hi', chat.respond(user_input))
+    user_input = "como estas"
+    print('hi', chat.respond(user_input))
+    user_input = "cuando fuiste creado"
+    print('hi', chat.respond(user_input))
 if __name__ == "__main__":
     chatear()
 
