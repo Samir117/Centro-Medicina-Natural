@@ -1,3 +1,5 @@
+
+
 /**Colocar fecha */
 var d = new Date();
 function days() {
@@ -65,28 +67,55 @@ function fecha() {
 
 const searchFocus = document.getElementById('search-focus');
 const keys = [
-  { keyCode: 'AltLeft', isTriggered: false },
-  { keyCode: 'ControlLeft', isTriggered: false },
+    { keyCode: 'AltLeft', isTriggered: false },
+    { keyCode: 'ControlLeft', isTriggered: false },
 ];
 
 window.addEventListener('keydown', (e) => {
-  keys.forEach((obj) => {
-    if (obj.keyCode === e.code) {
-      obj.isTriggered = true;
+    keys.forEach((obj) => {
+        if (obj.keyCode === e.code) {
+            obj.isTriggered = true;
+        }
+    });
+
+    const shortcutTriggered = keys.filter((obj) => obj.isTriggered).length === keys.length;
+
+    if (shortcutTriggered) {
+        searchFocus.focus();
     }
-  });
-
-  const shortcutTriggered = keys.filter((obj) => obj.isTriggered).length === keys.length;
-
-  if (shortcutTriggered) {
-    searchFocus.focus();
-  }
 });
 
 window.addEventListener('keyup', (e) => {
-  keys.forEach((obj) => {
-    if (obj.keyCode === e.code) {
-      obj.isTriggered = false;
-    }
-  });
+    keys.forEach((obj) => {
+        if (obj.keyCode === e.code) {
+            obj.isTriggered = false;
+        }
+    });
 });
+
+
+async function Resumen() {
+    let txtlink, traduccion = 1;
+    txtlink = document.getElementById("txtlink").value;
+
+    var info = new FormData();
+    info.append('link', txtlink)
+    info.append('traduccion', traduccion)
+    if (txtlink == "") {
+        alert("Error, verificar campos!")
+    } else {
+       console.log(info.get("link"))
+        let fetchData = {
+            method: 'POST',
+            body: info,
+            headers: new Headers()
+        }
+        let data = await fetch('http://127.0.0.1:5000/api_resumen', fetchData)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                
+            })
+
+    }
+}
