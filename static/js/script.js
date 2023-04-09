@@ -106,17 +106,50 @@ async function Resumen() {
             body: info,
             headers: new Headers()
         }
-        
-        let data = await fetch('http://127.0.0.1:5000/api_resumen', fetchData)
-        .then(res => res.json())
-        .then(data => {
-            var inputResumen = document.getElementById("idresumen");
-            var inputTraducido = document.getElementById("idtraduccion");
 
-            inputResumen.value = data['original']
-            inputTraducido.value = data['traducido']
-        })
+        let data = await fetch('http://127.0.0.1:5000/api_resumen', fetchData)
+            .then(res => res.json())
+            .then(data => {
+                var inputResumen = document.getElementById("idresumen");
+                var inputTraducido = document.getElementById("idtraduccion");
+
+                inputResumen.value = data['original']
+                inputTraducido.value = data['traducido']
+            })
     } else {
         alert('Campos Incompletos')
     }
 }
+
+
+async function Sentimiento() {
+   let  input;
+   input = document.getElementById("inputsentimientos").value;
+    if (input) {
+        var info = new FormData();
+        info.append('expresion', input)
+
+        let fetchData = {
+            method: 'POST',
+            body: info,
+            headers: new Headers()
+        }
+
+        let resultados = await fetch('http://127.0.0.1:5000/api_sentimientos', fetchData)
+            .then(res => res.json())
+            .then(resultados => {
+                console.log(resultados)
+                var inputsentimiento = document.getElementById("txtsentimientos");
+                inputsentimiento.value = resultados['compound']
+
+
+
+
+
+            })
+        
+    } else {
+        alert('Campos Incompletos')
+    }
+}
+

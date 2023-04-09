@@ -2,29 +2,22 @@
 {% block body %}
 <div class="container" style="background: #eeeeee;">
     <h1 class=" display-6"> ¿Como te sientes hoy? </h1>
-    <br>
     <div class="row">
-        <div class="col-lg-4 col-sm-4 col-md-4" >
-            <div class="form-outline">
-                <input type="text" id="ins" class="form-control" data-mdb-showcounter="true" maxlength="20" />
-                <label class="form-label" for="form16"></label>
-                <div class="form-helper"></div>
-              </div>
-              <br>
+        <div class="col-lg-6 col-md-6 col-sm-6">   
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" id="inputsentimientos" placeholder="Como te sientes?" aria-label="Enviar">
+                <button onclick="Sentimiento()" id="button" class="btn btn-outline-success btn-rounded" data-mdb-ripple-color="dark" type="button">Enviar</button>
+            </form>
+        </div>
+    </div>
+        <div class="row">
+        <div class="col-lg-6 col-sm-6 col-md-6">
+            <br>
+            <label for="exampleFormControlTextarea1" class="display-6"> Resultado</label>
+            <textarea class="form-control" id="txtsentimientos" rows="10"></textarea>
         </div>
 
-        <div class="col-lg-2 col-sm-2 col-md-2" >
-              <br>
-        </div>
 
-        <div class="col-lg-6 col-sm-6 col-md-6" >                                                   
-            <div class="form-outline">
-                <input type="text" id="ins" class="form-control" data-mdb-showcounter="true" maxlength="20" />
-                <label class="form-label" for="form16"></label>
-                <div class="form-helper"></div>
-              </div>
-              <br>
-        </div>
     </div>
 </div>
 {% endblock %}
