@@ -1,3 +1,4 @@
+
 /**Colocar fecha */
 var d = new Date();
 function days() {
@@ -123,8 +124,8 @@ async function Resumen() {
 
 
 async function Sentimiento() {
-   let  input;
-   input = document.getElementById("inputsentimientos").value;
+    let input;
+    input = document.getElementById("inputsentimientos").value;
     if (input) {
         var info = new FormData();
         info.append('expresion', input)
@@ -148,10 +149,40 @@ async function Sentimiento() {
                 neg.value = resultados['neg']
                 neu.value = resultados['neu']
                 pos.value = resultados['pos']
+
             })
-        
+
     } else {
         alert('Campos Incompletos')
     }
+}
+
+async function chat() {
+
+    let input;
+    input = document.getElementById("inputchat").value;
+
+    if (input) {
+        var info = new FormData();
+        info.append('entrada', input)
+        let fetchData = {
+            method: 'POST',
+            body: info,
+            headers: new Headers()
+        }
+        let resultados = await fetch('http://127.0.0.1:5000/api_chatbot', fetchData)
+            .then(res => res.json())
+            .then(resultados => {
+              
+                var conve = JSON.stringify(resultados)
+                console.log (conve)
+
+                var chat = document.getElementById("chat")
+                chat.value= conve.replace(/['"]+/g, '');
+            })
+
+    } else {
+        alert('Campos invalidos')
+    }   
 }
 

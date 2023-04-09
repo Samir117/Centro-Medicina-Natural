@@ -224,11 +224,12 @@ def api_chatbot():
     chat = Chat(pares, mis_reflexions)
     entrada = request.form['entrada']
     respuesta = chat.respond(entrada)
+    json = jsonify(respuesta)
     # envio a la base de datos
     cursor = db.connection.cursor()
     cursor.execute('INSERT INTO res_chatbot(entrada, respuesta) VALUES(%s, %s)', (entrada, respuesta))
     db.connection.commit()
-    return respuesta
+    return json
 
 if __name__ == '__main__':
     app.run(debug=True)
