@@ -149,39 +149,76 @@ def api_chatbot():
     }
 
     pares = [
-        [
-            r"mi nombre es (.*)",
-            ["Hola %1, como estas ?",]
-        ],
-        [
-            r"cual es tu nombre ?",
-            ["Mi nombre es Chatbot ?",]
-        ],
-        [
-            r"como estas ?",
-            ["Bien, y tu?",]
-        ],
-        [
-            r"disculpa (.*)",
-            ["No pasa nada",]
-        ],
-        [
-            r"hola|hey|buenas",
-            ["Hola", "Que tal",]
-        ],
-        [
-            r"que (.*) quieres ?",
-            ["Nada gracias",]
-            
-        ],
-        [
-            r"(.*) creado ?",
-            ["Fui creado hoy",]
-        ],
-        [
-            r"finalizar",
-            ["Chao","Fue bueno hablar contigo"]
-        ],
+        [   r"mi nombre es (.*)", ["Hola %1, como estas ?",] ],
+
+        [   r"Bien, y tu?", ["Excelente, listo para responder tus inquietudes",]],
+
+        [   r"que es la medicina n(.*)?", ["Las medicina natural (o remedios herbales) son plantas usadas como medicamento."
+             " Las personas las usan para ayudar a prevenir o curar una enfermedad.",]],
+
+        [   r"que tan buena es la medicina n(.*)?", ["Genera efectos positivos a nivel emocional porque alivia el estrés, los miedos, la soledad,"
+             " la desesperación, entre otros.",] ],
+
+        [   r"por quien fuiste creado(.*)",  ["Mis creadores Son Estudiantes de Ing. en Sistemas. De la CUL",]],
+
+        [   r"Para que fuiste creado(.*)",   ["Para ser tu asitente en todas las preguntas que tengas sobre Center Salud",]],
+
+        [   r"En que lenguaje (.*) hecho(.*)?",   ["Fuí creado con librerias de lenguaje natural (NLTK),"
+                                           " además mi base de programación es de Python",]],
+
+        [   r"cual es tu nombre ?",     ["Mi nombre es Center ?",] ],
+
+        [   r"como estas ?",   ["Bien, y tu?",]],
+
+        [   r"disculpa (.*)",  ["No pasa nada",]],
+
+        [   r"hola|hey|buenas|oye",   ["Hola", "Que tal",]],
+
+        [   r"que (.*) quieres ?",  ["Que nos pongan 5 en el corte",]  ],
+
+        [   r"(.*) creado ?",    ["Fui creado hoy",]],
+
+        [   r"(.*)cancion(.*)",  ["Te podría gustar esta cancion "
+                                  "https://www.youtube.com/watch?v=dhHh9cnmTOA&ab_channel=JoeArroyoVideo",] ],
+
+        [   r"Alguna medicina para la tos|algun remedio para la tos(.*)?", ["Té con miel, Jengibre, abundante liquido",] ],
+
+        [   r"Medicinas naturales(.*)", ["terapia neural, sueroterapia, homeopatía, campos magnéticos,"
+                                         " biopuntura, ozonoterapia, acupuntura, quiropraxia, "
+                                         "masaje terapéutico, entre otros.",]],
+
+        [   r"remedios para cuidar(.*)", ["1. Aceitunas y limon para mareos."
+                                          "2. Alcohol para quitar el olor de los pies,"
+                                          " si quieres saber mas, pide tu cita "
+                                          "a este numero telefonico 3004354010",]],
+
+        [   r"que es center sal(.*)", ["Una plataforma dedicada a brindar soluciones de"
+                                       " medicina natural para mejorar la calidad de vida de las personas.",]],
+
+        [   r"para (.*) limon(.*)", ["ayuda a incrementar las defensas de nuestro cuerpo y "
+                                     "a combatir diversas enfermedades",]],
+
+        [   r"para (.*) ajo(.*)", ["ayuda combatir infecciones respiratorias, dilata los bronquios,"
+                                   " fluidifica las mucosas, etc...",]],
+
+        [   r"para (.*) sal(.*)", ["Es vital para el funcionamiento del organismo, consumirla en las cantidades"
+                                   " recomendadas permite una adecuada función de los músculos y del corazón",]],
+
+        [   r"(.*) acupuntura(.*)", ["Punción con una o más agujas que se realiza en una parte del cuerpo"
+                                    " y tiene una finalidad curativa o terapéutica.",]],
+
+        [   r"Cuales (.*) Hierbas medicinales", ["Agrego un link  de plantas medicinales y sus beneficios -->"
+                                                " https://www.elmueble.com/plantas-flores/plantas-medicinales-que-puedes-cultivar-tu_42854",]],
+
+        [   r"plantas de uso tradicional(.*)", ["Aqui encuentras las plantas mas utilizadas --->"
+                                                "https://psicologiaymente.com/salud/plantas-medicinales",]],
+
+        [   r"(.*) cita", ["Para agendar una cita, llame o escriba a este numero telefonico 3004354010",]],
+
+        [   r"(.*)fin(.*)",   ["Chao" " Fue bueno hablar contigo",] ],
+
+        [   r"(.*)", ["No entendí tu peticion o pregunta. Escribe nuevamente",]],
+
     ]
 
     chat = Chat(pares, mis_reflexions)
