@@ -1,5 +1,3 @@
-
-
 /**Colocar fecha */
 var d = new Date();
 function days() {
@@ -98,24 +96,27 @@ async function Resumen() {
     let txtlink, traduccion = 1;
     txtlink = document.getElementById("txtlink").value;
 
-    var info = new FormData();
-    info.append('link', txtlink)
-    info.append('traduccion', traduccion)
-    if (txtlink == "") {
-        alert("Error, verificar campos!")
-    } else {
-       console.log(info.get("link"))
+    if (txtlink) {
+        var info = new FormData();
+        info.append('link', txtlink)
+        info.append('traduccion', traduccion)
+
         let fetchData = {
             method: 'POST',
             body: info,
             headers: new Headers()
         }
+        
         let data = await fetch('http://127.0.0.1:5000/api_resumen', fetchData)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                
-            })
+        .then(res => res.json())
+        .then(data => {
+            var inputResumen = document.getElementById("idresumen");
+            var inputTraducido = document.getElementById("idtraduccion");
 
+            inputResumen.value = data['original']
+            inputTraducido.value = data['traducido']
+        })
+    } else {
+        alert('Campos Incompletos')
     }
 }
