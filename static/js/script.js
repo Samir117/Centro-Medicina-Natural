@@ -177,9 +177,16 @@ async function chat() {
                 var conve = JSON.stringify(resultados)
                 console.log (conve)
 
-                var chat = document.getElementById("chat")
-                chat.value= conve.replace(/['"]+/g, '');
+                var bot = document.getElementById("bot")
+                bot.value= conve.replace(/['"]+/g, '');
+
+
+
+               envio = document.getElementById("envio")
+               envio.value = input
+               
             })
+
 
     } else {
         alert('Campos invalidos')
