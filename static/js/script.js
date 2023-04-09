@@ -139,13 +139,15 @@ async function Sentimiento() {
             .then(res => res.json())
             .then(resultados => {
                 console.log(resultados)
-                var inputsentimiento = document.getElementById("txtsentimientos");
-                inputsentimiento.value = resultados['compound']
+                var compound = document.getElementById("compound")
+                var neg = document.getElementById("neg")
+                var neu = document.getElementById("neu")
+                var pos = document.getElementById("pos")
 
-
-
-
-
+                compound.value = resultados['compound']
+                neg.value = resultados['neg']
+                neu.value = resultados['neu']
+                pos.value = resultados['pos']
             })
         
     } else {
