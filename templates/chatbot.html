@@ -1,31 +1,68 @@
 {% extends './layout.html' %}
 {% block body %}
-
 <div class="container">
   <div class="row">
+
     <section style="background-color: #eee;">
+      <div class="container py-5">
+    
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-8 col-lg-6 col-xl-4">
+    
+            <!-- Buttons trigger collapse -->
+            <a class="btn btn-info btn-lg btn-block" data-mdb-toggle="collapse" href="#collapseExample"
+              role="button" aria-expanded="false" aria-controls="collapseExample">
+              <div class="d-flex justify-content-between align-items-center">
+                <span>Inicia ChatBot</span>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+            </a>
+    
+            <!-- Collapsed content -->
+            <div class="collapse mt-3" id="collapseExample">
+              <div class="card" id="chat4">
+                <div class="card-body" data-mdb-perfect-scrollbar="true"
+                  style="position: relative; height: 400px">
+    
+                  <div class="d-flex flex-row justify-content-start">
+                    <img src="{{ url_for('static', filename='assets/mujer.png') }}"
+                      alt="avatar 1" style="width: 45px; height: 100%;">
+                    <div>
+                      <textarea disabled class="small p-2 ms-3 mb-1 rounded-3" id="bot" rows = "6" style="background-color: #f5f6f7;"></textarea>
+                      <p class="small me-3 mb-3 rounded-3 text-muted d-flex justify-content-end"><script>fecha()</script></p>
 
-                  <div class="col-lg-6 col-sm-6 col-md-6">
-                      <textarea class="form-control" id="chat" rows="1"></textarea>
+                    </div>
+
                   </div>
-
-            
+    
+                  <div class="d-flex flex-row justify-content-end">
+                    <div>
+                      <textarea disabled class="small p-2 ms-3 mb-1 rounded-3" id="envio" rows = "1" style="background-color: #f5f6f7;"></textarea>
+                      </p>
+                      <p class="small me-3 mb-3 rounded-3 text-muted d-flex justify-content-end"><script>fecha()</script></p>
+                    </div>
+                    <img src="{{ url_for('static', filename='assets/hombre.png') }}"
+                      alt="avatar 1" style="width: 45px; height: 100%;">
+                  </div>
+    
+                </div>
+                <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
+                  <img src="{{ url_for('static', filename='assets/hombre.png') }}"
+                    alt="avatar 3" style="width: 40px; height: 100%;">
+                  <input type="text" class="form-control form-control-lg" id="inputchat"
+                    placeholder="Type message">
+                  <a class="ms-3 link-info" onclick="chat()" href="#!"><i class="fas fa-paper-plane"></i></a>
+                </div>
               </div>
-              <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
-                  id="" alt="avatar 3" style="width: 40px; height: 100%;">
-                <input style="border-color: #3a7658;" type="text" class="form-control form-control-lg" id="inputchat" placeholder="Type message">
-                <button onclick="chat()" id="button" class="btn btn-outline-success btn-rounded" data-mdb-ripple-color="dark" type="button">Enviar</button>
-              </div>
-
             </div>
+    
           </div>
         </div>
+    
       </div>
     </section>
 
   </div>
-
 </div>
 
 
